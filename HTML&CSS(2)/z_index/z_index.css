@@ -1,0 +1,27 @@
+div{
+    width: 300px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    position:relative;
+}
+.div1{
+    background-color: #F5BCAF;
+    top: 100px;
+    /* z-index:10; */
+    /* z-index: -10; */
+}
+.div2{
+    background-color: #F5D4AF;
+    width: 150px;
+}
+.div3{
+    background-color: #F5F0AF;
+    top: 100px;
+    /* z-index: 10; */
+    /* z-index: -10; */
+}
+.div4{
+    background-color: #D2F5AF;
+    width: 150px;
+}

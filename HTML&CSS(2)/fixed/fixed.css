@@ -1,0 +1,14 @@
+.static{
+    background-color: #FDD1C8;
+   
+}
+.fixed{
+    background-color:  #FCFDC8;
+    position: fixed;
+    top: 200px;
+    left: 20px;
+}
+div{
+    width: 300px;
+    border: solid;
+}

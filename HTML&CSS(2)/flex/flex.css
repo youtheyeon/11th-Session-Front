@@ -1,0 +1,64 @@
+.container1{
+    display: flex;
+    flex-wrap: wrap;
+}
+.container2{
+    height: 200px;
+    display: flex;
+    /* 1번 문제, 아래에 코드를 추가하세요 */
+    /* justify-content: space-between;
+    align-items: flex-end; */
+}
+.container3{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+     /* 2번 문제, 아래에 코드를 추가하세요 */
+     /* justify-content: space-evenly;
+     align-items: center; */
+}
+.container4{
+    height: 200px;
+    display: flex;
+    /* 3번 문제, 아래에 코드를 추가하세요 */
+    /* justify-content: center;
+    align-items: center; */
+}
+/* 아래는 수정 X */
+div{
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    width: 100px;
+}
+section{
+    border:solid;
+    width: 400px;
+}
+.div1{
+    background-color: #F5C2AF;
+}
+.div2{
+    background-color: #F0BB92;
+}
+.div3{
+    background-color: #FCF2A2;
+}
+.div4{
+    background-color: #CBFCA2;
+}
+.div5{
+    background-color: #A2EBFC;
+}
+.div6{
+    background-color: #A2B7FC;
+}
+.div7{
+    background-color: #DEB4FD;
+}
+.div8{
+    background-color: #FDB4DF;
+}
+.div9{
+    background-color: #9498AE;
+}
