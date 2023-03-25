@@ -4,6 +4,7 @@
 }
 .fixed{
     background-color:  #FCFDC8;
+    /* 아래 positon: fixed 주석 처리 해보기 */
     position: fixed;
     top: 200px;
     left: 20px;
