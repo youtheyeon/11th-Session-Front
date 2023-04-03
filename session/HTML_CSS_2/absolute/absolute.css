@@ -1,22 +1,25 @@
-.wrapper{
+.wrapper {
     width: 100%;
     justify-content: space-around;
 }
-.parent1{
+
+.parent1 {
     color: green;
     border: solid;
     position: static;
     height: 300px;
 }
-.parent2{
+
+.parent2 {
     color: red;
-    border:solid;
+    border: solid;
     height: 100px;
     /* 아래 코드 주석 처리해주세요! */
-    position: fixed; 
+    /* position: fixed;  */
     margin-top: 30px;
 }
-.child{
+
+.child {
     color: blue;
     border: solid;
     height: 100px;
@@ -24,6 +27,7 @@
     top: 200px;
     left: 200px;
 }
-div{
+
+div {
     width: 300px;
 }

@@ -1,29 +1,33 @@
-div{
+div {
     width: 300px;
     height: 100px;
     color: white;
     text-align: center;
-    position:relative;
+    position: relative;
 }
-.div1{
+
+.div1 {
     background-color: #F5BCAF;
     top: 100px;
     /* 아래 z-index: 값 코드를 순서대로 주석 해제 해보기 */
-    /* z-index:10; */
-    /* z-index: -10; */
+    z-index: 10;
+    z-index: -10;
 }
-.div2{
+
+.div2 {
     background-color: #F5D4AF;
     width: 150px;
 }
-.div3{
+
+.div3 {
     background-color: #F5F0AF;
     top: 100px;
     /* 아래 z-index: 값 코드를 순서대로 주석 해제 해보기 */
     /* z-index: 10; */
     /* z-index: -10; */
 }
-.div4{
+
+.div4 {
     background-color: #D2F5AF;
     width: 150px;
 }
