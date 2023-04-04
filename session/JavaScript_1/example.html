@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+    <span id="text">id</span>
+    </div>
+    <div class="wrapper">
+    <span class="text">class</span>
+    </div>
+    <div id="container">
+        <a class="link">아기사자 파이팅</a> 
+    </div>
+    <div id="container2">
+        <a class="link">보통사자 파이팅</a> 
+    </div>
+</body>
+    <script>
+
+        // getElementById()
+        console.log("[getElementById]");
+        const container = document.getElementById('wrapper');
+        const text = document.getElementById('text');
+        console.log(container); 
+        console.log(text); 
+
+        // getElementByClass()
+        console.log("[getElementByClass]");
+        const container2 = document.getElementsByClassName('wrapper');
+        const text2 = document.getElementsByClassName('text');
+        console.log(container2); 
+        console.log(text2);
+
+        // getElementById() + getElementByClass()
+        console.log("[getElementById + Class]");
+        const baby = document.getElementById("container").getElementsByClassName("link");
+        const normal = document.getElementById("container2").getElementsByClassName("link");
+        
+        console.log(baby);
+        console.log(normal);
+        
+        // createElement()
+        const div = document.createElement('div');
+        // querySelector()
+        document.querySelector('#wrapper').append(div);
+        
+    </script>
+    
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 외부 자바스크립트 -->
+    <script src="Print.js"></script>
+  </head>
+  <body>
+    <h1 id="title">멋사 11기와 함께하는 자바스크립트 배우기</h1>
+    <!-- Inline -->
+    <h3 onclick="alert('인라인 방식')">인라인 방식 자바스크립트</h3>
+
+    <!-- 내부 자바스크립트 -->
+    <h3 id="internal">내부 자바스크립트</h3>
+    <script>
+      var internal = document.getElementById('internal');
+      internal.onclick = function () {
+        alert('내부 자바스크립트');
+      };
+    </script>
+  </body>
+</html>
