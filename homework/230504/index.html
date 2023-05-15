@@ -1,2 +1,62 @@
-<!-- 이 폴더 안에서 과제를 수행해주세요 -->
-<!-- 주석은 지우고 진행해주세요 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="todolist.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="left-contents">
+        <div class="todo-info">
+          <img src="./img/todoinfo.svg" alt="todoinfo" />
+        </div>
+        <div class="todo-calendar">
+          <img src="./img/todocalendar.svg" alt="todocalendar" />
+        </div>
+        <div class="todo-life-goals">
+          <h2>Life Goals</h2>
+          <h4>매일 달성할 목표를 작성해보세요.</h4>
+          <div class="todo-life-goals-box">
+            <ul class="goalList" id="goalList"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="right-contents">
+        <div class="right-box">
+          <h1 class="todo-list-h1">Friday, 5 May</h1>
+          <h3 class="taskNum"></h3>
+          <div class="right-list-container">
+            <div class="right-list-todo">
+              <div>
+                <div class="list-title">
+                  <h5>Things to do</h5>
+                  <button class="popup-button"></button>
+                </div>
+                <ul class="todo-list"></ul>
+                <div class="todo-input-items">
+                  <form class="todo-form">
+                    <input
+                      class="todo-input"
+                      placeholder="할 일을 입력해주세요."
+                    />
+                    <button class="todo-input-button" type="submit"></button>
+                  </form>
+                </div>
+              </div>
+              <div>
+                <div class="list-title">
+                  <h5>Done</h5>
+                </div>
+                <ul class="done-list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="todolist.js"></script>
+  </body>
+</html>

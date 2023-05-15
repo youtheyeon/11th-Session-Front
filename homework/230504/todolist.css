@@ -1,0 +1,385 @@
+@font-face {
+  font-family: "AppleSDGothicNeoM";
+  font-weight: 400;
+  src: url("./fonts/AppleSDGothicNeoM.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "AppleSDGothicNeoB";
+  font-weight: 400;
+  src: url("./fonts/AppleSDGothicNeoB.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: "AppleSDGothicNeoEB";
+  font-weight: 400;
+  src: url("./fonts/AppleSDGothicNeoEB.ttf") format("truetype");
+}
+
+body {
+  top: 0;
+  width: 1280px;
+  height: 832px;
+}
+
+.wrapper {
+  background: linear-gradient(90deg, #1A6DFF 0%, #0C4BCC 96.95%);
+  padding-top: 35px;
+  padding-left: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+h2 {
+  font-family: 'AppleSDGothicNeoB';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 49px;
+}
+
+h3 {
+  font-family: 'AppleSDGothicNeoEB';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+h4 {
+  font-family: 'AppleSDGothicNeoM';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+h5 {
+  font-family: 'AppleSDGothicNeoB';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.left-contents {
+  color: white;
+}
+
+.todo-info {
+  width: 241px;
+  height: 55px;
+}
+
+.todo-calendar {
+  margin-top: 41px;
+  width: 556px;
+  height: 157.69px;
+}
+
+.todo-life-goals {
+  margin-top: 44.31px;
+  width: 580px;
+  height: 459px;
+}
+
+.todo-life-goals h2 {
+  font-size: 35px;
+  margin-bottom: 1px;
+  line-height: 49px;
+}
+
+.todo-life-goals h4 {
+  margin-top: 10px;
+  color: #E2E2E2;
+}
+
+.goals-box-container {
+  width: 275px;
+  height: 170px;
+  border-radius: 20px;
+  background-color: #0C4BCC;
+  filter: drop-shadow(0px 67px 27px rgba(0, 0, 0, 0.01)) drop-shadow(0px 38px 23px rgba(0, 0, 0, 0.05)) drop-shadow(0px 17px 17px rgba(0, 0, 0, 0.09)) drop-shadow(0px 4px 9px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+}
+
+.goal-title {
+  padding-left: 21px;
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.goal-title {
+  font-family: 'AppleSDGothicNeoEB';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.goal-list-title {
+  margin-left: 9px;
+}
+
+.goal-check-button {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 1px;
+  cursor: pointer;
+
+  background-image: url(./img/white_false.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.goalList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  padding-left: 0;
+}
+
+.goalList label input[type="checkbox"]:checked+div {
+  background-image: url(./img/white_true.svg);
+}
+
+.goal-check {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.goals-month {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 14px;
+}
+
+.goals-achievement {
+  display: flex;
+  width: 96px;
+  height: 17px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+  color: #155EE9;
+  margin-bottom: 11px;
+
+  font-family: 'AppleSDGothicNeoM';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.goalsDivNumber {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.goals-number {
+  font-family: 'AppleSDGothicNeoM';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 15px;
+}
+
+.count {
+  height: 49px;
+  font-family: 'AppleSDGothicNeoB';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 49px;
+}
+
+
+.goals-add-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-contents {
+  margin-right: 40px;
+}
+
+.right-box {
+  background-color: white;
+  border-radius: 30px 30px 0 0;
+  margin-top: 40px;
+  padding-top: 23px;
+  padding-left: 40px;
+  width: 540px;
+  height: 752px;
+}
+
+.todo-list-h1 {
+  width: 274px;
+  height: 65px;
+  font-family: 'AppleSDGothicNeoEB';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 57px;
+  margin-top: 23px;
+  margin-bottom: 0;
+}
+
+.right-list-todo {
+  height: 615px;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  overflow-y: auto;
+}
+
+.taskNum {
+  margin-top: -8px;
+  margin-bottom: 31px;
+  width: 51px;
+  height: 26px;
+  color: #155EE9;
+}
+
+.list-title {
+  margin-right: 39px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #155EE9;
+}
+
+.popup-button {
+  background: url(./img/Variant2.png) no-repeat;
+  background-size: cover;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.todo-delete-button,
+.done-delete-button {
+  background: url(./img/Vector\ 5.png) no-repeat;
+  background-size: cover;
+  border: none;
+  width: 11px;
+  height: 13px;
+  cursor: pointer;
+  margin-top: -3px;
+}
+
+.todo-check-button {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+
+  background-image: url(./img/blue_false.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.done-check-button {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+
+  background-image: url(./img/blue_true.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+label input[type="checkbox"] {
+  display: none;
+}
+
+.todo-list,
+.done-list {
+  list-style: none;
+  padding-left: 13px;
+}
+
+.todo-list li,
+.done-list li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.todo-list li span,
+.done-list li span {
+  margin-left: 13px;
+  margin-right: 7px;
+  font-family: 'AppleSDGothicNeoM';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+
+.todo-form {
+  width: 452px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #155EE9;
+  border-radius: 15px;
+  padding-left: 16px;
+  padding-right: 10px;
+}
+
+.todo-form input {
+  background: transparent;
+  width: 90%;
+  border: none;
+  color: white;
+}
+
+.todo-form input::placeholder {
+  color: white;
+}
+
+.todo-form input:focus {
+  outline: none;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.todo-input-items {
+  display: none;
+  margin-left: 12px;
+}
+
+.todo-input-button {
+  background: url(./img/white_true.svg) no-repeat;
+  background-size: cover;
+  border: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
