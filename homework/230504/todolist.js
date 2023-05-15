@@ -191,7 +191,6 @@ function updateGoals() {
     const goalLi = document.createElement('li');
     const goalCheckbox = document.createElement('input');
     goalCheckbox.type = 'checkbox';
-    goalCheckbox.id = `goal${index + 1}`;
     goalCheckbox.checked = goal.achieved;
 
     const goalLabel = document.createElement('label');
