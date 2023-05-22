@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { MdSettings, MdClose, MdKeyboard } from 'react-icons/md';
-import { CgMenuGridO } from 'react-icons/cg';
+import { TbGridDots } from 'react-icons/tb';
 import { BsPersonCircle } from 'react-icons/bs';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { IoMdMic } from 'react-icons/io';
@@ -54,7 +54,7 @@ const SearchHeader = () => {
             </SearchContainer>
             <div className='inner'>
                 <MdSettings size='28' color='#606367' />
-                <CgMenuGridO size='30' color='#606367' />
+                <TbGridDots size='30' color='#606367' />
                 <BsPersonCircle size='30' color='#a8a9aa' />
             </div>
         </Wrapper>

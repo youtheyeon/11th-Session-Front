@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CgMenuGridO } from 'react-icons/cg';
+import { TbGridDots } from 'react-icons/tb';
 
 const Header = () => {
     return (
@@ -11,7 +11,7 @@ const Header = () => {
             <Section>
                 <Text>Gmail</Text>
                 <Text>이미지</Text>
-                <CgMenuGridO size='25' color='#606367' />
+                <TbGridDots size='25' color='#606367' />
                 <LoginBtn>로그인</LoginBtn>
             </Section>
         </Wrapper>
