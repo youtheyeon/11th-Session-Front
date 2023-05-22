@@ -60,7 +60,7 @@ const Comment = () => {
             <Length>{`댓글 (${comments.length})`}</Length>
             {comments &&
                 comments.map(item => (
-                    <CommentContainer>
+                    <CommentContainer key={item.id}>
                         <div className='flex'>
                             <div className='nickname'>{item.nickname}</div>
                             <div className='date'>{item.created_at}</div>
@@ -71,7 +71,9 @@ const Comment = () => {
             <div className='bottom' ref={endRef}></div>
             <CommentInputContainer onSubmit={OnSubmit}>
                 <CommentInput value={newInput.content} onChange={handleInput} />
-                <SubmitBtn type='submit'>작성</SubmitBtn>
+                <SubmitBtn type='submit' isEmpty={newInput.content === ''}>
+                    작성
+                </SubmitBtn>
             </CommentInputContainer>
         </Wrapper>
     );
@@ -137,7 +139,7 @@ const CommentInput = styled.input`
 const SubmitBtn = styled.button`
     width: 70px;
     height: 44px;
-    background-color: lightgray;
+    background-color: ${props => (props.isEmpty ? 'lightgray' : 'dimgray')};
     color: white;
     border: 0;
     border-radius: 5px;

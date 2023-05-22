@@ -90,14 +90,17 @@ const ContentSection = styled.div`
     margin-top: 10px;
     .date {
         font-size: 0.9rem;
+        flex-shrink: 0;
     }
     .border {
         width: 12px;
         height: 0;
         border-bottom: 1px solid dimgray;
         margin: 0 5px;
+        flex-shrink: 0;
     }
     .content {
         font-size: 0.9rem;
+        flex-shrink: 0;
     }
 `;

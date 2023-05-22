@@ -4,11 +4,11 @@ import Footer from '../components/mainpage/Footer';
 
 const MainPage = () => {
     return (
-        <>
+        <div className='MainPage'>
             <Header />
             <Main />
             <Footer />
-        </>
+        </div>
     );
 };
 

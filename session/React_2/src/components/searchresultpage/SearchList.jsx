@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import SearchItem from './SearchItem';
-import { resultdata } from '../../_mock/data';
+import { resultdata, navlinkresultdata } from '../../_mock/data';
 
 const SearchList = () => {
     const location = useLocation();
@@ -14,6 +14,13 @@ const SearchList = () => {
                 <>
                     <Length>{`검색결과 약 ${resultdata.length}개`}</Length>
                     {resultdata.map(item => (
+                        <SearchItem key={item.id} item={item} />
+                    ))}
+                </>
+            ) : keyword === 'NavLink' ? (
+                <>
+                    <Length>{`검색결과 약 ${navlinkresultdata.length}개`}</Length>
+                    {navlinkresultdata.map(item => (
                         <SearchItem key={item.id} item={item} />
                     ))}
                 </>

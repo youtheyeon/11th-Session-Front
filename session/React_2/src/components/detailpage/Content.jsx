@@ -14,7 +14,8 @@ const Content = () => {
                     <img src={currentPost.profile_img} alt='profile' />
                 </div>
                 <div className='text'>
-                    {currentPost.nickname + ' | ' + currentPost.created_at}
+                    <span>{currentPost.nickname}</span>
+                    {' | ' + currentPost.created_at}
                 </div>
             </Profile>
             <Border />
@@ -22,20 +23,24 @@ const Content = () => {
                 {currentPost.content &&
                     (currentPost.content.includes('\n') ? (
                         <>
-                            {currentPost.content.split('\n').map(line => {
-                                return (
-                                    <span>
-                                        {line}
-                                        <br />
-                                    </span>
-                                );
-                            })}
+                            {currentPost.content
+                                .split('\n')
+                                .map((line, idx) => {
+                                    return (
+                                        <span key={idx + line}>
+                                            {line}
+                                            <br />
+                                        </span>
+                                    );
+                                })}
                         </>
                     ) : (
                         <>
                             <span>{currentPost.content}</span>
                         </>
                     ))}
+                <br />
+                {Number(id) === 5 && <a href='/navlink/home'>이동</a>}
             </Text>
             <Border />
         </Wrapper>
@@ -51,6 +56,7 @@ const Wrapper = styled.div`
     align-items: center;
 `;
 const Title = styled.div`
+    width: 70%;
     padding-top: 100px;
     font-size: 3rem;
     font-weight: 700;
@@ -66,7 +72,7 @@ const Profile = styled.div`
         height: 40px;
         border-radius: 50%;
         overflow: hidden;
-        margin-right: 10px;
+        margin-right: 15px;
     }
     img {
         width: 100%;
@@ -74,6 +80,11 @@ const Profile = styled.div`
         object-fit: cover;
     }
     .text {
+        color: dimgray;
+        span {
+            font-weight: 700;
+            color: black;
+        }
     }
 `;
 const Border = styled.div`

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { MdSettings, MdClose, MdKeyboard } from 'react-icons/md';
 import { CgMenuGridO } from 'react-icons/cg';
@@ -10,9 +10,12 @@ import { SiGooglelens } from 'react-icons/si';
 
 const SearchHeader = () => {
     const navigate = useNavigate();
-    const location = useLocation();
-    const queryParams = new URLSearchParams(location.search);
-    const keyword = queryParams.get('keyword');
+    // const location = useLocation();
+    // const queryParams = new URLSearchParams(location.search);
+    // const keyword = queryParams.get('keyword');
+    const [searchParams, setSearchParams] = useSearchParams();
+    const keyword = searchParams.get('keyword');
+
     const [inputValue, setInputValue] = useState('');
     const handleInput = e => {
         e.preventDefault();
