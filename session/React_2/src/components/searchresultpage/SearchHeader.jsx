@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
-import { MdSettings, MdClose, MdKeyboard } from 'react-icons/md';
+import { MdSettings, MdClose, MdKeyboard, MdMic } from 'react-icons/md';
 import { TbGridDots } from 'react-icons/tb';
 import { BsPersonCircle } from 'react-icons/bs';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { IoMdMic } from 'react-icons/io';
+import { GrSearch } from 'react-icons/gr';
 import { SiGooglelens } from 'react-icons/si';
 
 const SearchHeader = () => {
@@ -43,9 +42,9 @@ const SearchHeader = () => {
                 <MdClose size='25' color='#606367' />
                 <div className='border' />
                 <MdKeyboard size='26' color='#606367' />
-                <IoMdMic size='25' color='#606367' />
+                <MdMic size='25' color='#606367' />
                 <SiGooglelens size='20' color='#606367' />
-                <AiOutlineSearch
+                <GrSearch
                     size='25'
                     color='#3870e0'
                     className='last'

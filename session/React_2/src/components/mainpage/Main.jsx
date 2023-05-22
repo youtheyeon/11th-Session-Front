@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { MdKeyboard } from 'react-icons/md';
-import { IoMdMic } from 'react-icons/io';
+import { GrSearch } from 'react-icons/gr';
+import { MdKeyboard, MdMic } from 'react-icons/md';
 import { SiGooglelens } from 'react-icons/si';
 
 const Main = () => {
@@ -21,12 +20,12 @@ const Main = () => {
                 alt='google logo'
             />
             <SearchContainer>
-                <AiOutlineSearch size='20' color='#606367' />
+                <GrSearch size='20' color='#606367' />
                 <form onSubmit={moveToResult}>
                     <SearchInput value={inputValue} onChange={handleInput} />
                 </form>
                 <MdKeyboard size='25' color='#606367' />
-                <IoMdMic size='25' color='#606367' />
+                <MdMic size='25' color='#606367' />
                 <SiGooglelens size='20' color='#606367' />
             </SearchContainer>
             <BtnContainer>
