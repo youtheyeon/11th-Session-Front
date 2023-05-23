@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
+import google from '../../assets/google.png';
 import close from '../../assets/close.svg';
 import search from '../../assets/search.svg';
 import keyboard from '../../assets/keyboard.svg';
@@ -36,19 +37,24 @@ const SearchHeader = () => {
         navigate(`/search?keyword=${inputValue}`);
     };
 
+    // input창이 focus 상태인지 감지하고 상태를 저장
     const [isFocus, setIsFocus] = useState(false);
+    // input 태그 선택
     const searchInput = useRef(null);
+    // document의 activeElememt를 이용해 현재 active인 요소가 searchInput인지 검사
     const clickInput = event => {
         if (document.activeElement === searchInput.current) setIsFocus(true);
         else setIsFocus(false);
     };
+    // 첫 렌더링에 이벤트 리스너 추가
     useEffect(() => {
         document.addEventListener('click', clickInput);
     }, []);
+
     return (
         <Wrapper>
             <Logo
-                src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2880px-Google_2015_logo.svg.png'
+                src={google}
                 onClick={() => navigate('/')}
                 alt='google logo'
             />

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import google from '../../assets/google.png';
 import search from '../../assets/search.svg';
 import keyboard from '../../assets/keyboard.svg';
 import mic from '../../assets/mic.svg';
@@ -8,28 +9,33 @@ import lens from '../../assets/lens.svg';
 
 const Main = () => {
     const navigate = useNavigate();
+
+    // 검색창 input 상태 관리 로직
     const [inputValue, setInputValue] = useState('');
     const handleInput = e => {
         e.preventDefault();
         setInputValue(e.target.value);
     };
+    // submit 이벤트 발생 시 URL 파라미터에 검색어를 넣어 결과 페이지로 이동
     const moveToResult = () => navigate(`/search?keyword=${inputValue}`);
 
+    // input창이 focus 상태인지 감지하고 상태를 저장
     const [isFocus, setIsFocus] = useState(false);
+    // input 태그 선택
     const searchInput = useRef(null);
+    // document의 activeElememt를 이용해 현재 active인 요소가 searchInput인지 검사
     const clickInput = event => {
         if (document.activeElement === searchInput.current) setIsFocus(true);
         else setIsFocus(false);
     };
+    // 첫 렌더링에 이벤트 리스너 추가
     useEffect(() => {
         document.addEventListener('click', clickInput);
     }, []);
+
     return (
         <Wrapper>
-            <LogoImg
-                src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2880px-Google_2015_logo.svg.png'
-                alt='google logo'
-            />
+            <LogoImg src={google} alt='google logo' />
             <SearchContainer className={isFocus ? 'isFocus' : null}>
                 <img src={search} className='search' />
                 <form onSubmit={moveToResult}>

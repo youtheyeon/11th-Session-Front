@@ -1,13 +1,15 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
 import SearchItem from './SearchItem';
 import { resultdata, navlinkresultdata } from '../../_mock/data';
 
 const SearchList = () => {
-    const location = useLocation();
-    const queryParams = new URLSearchParams(location.search);
-    const keyword = queryParams.get('keyword');
+    // useSearchParams로 검색어 키워드 가져오기
+    const [searchParams, setSearchParams] = useSearchParams();
+    const keyword = searchParams.get('keyword');
+
+    // 조건부 렌더링 - 검색어 키워드에 해당하는 데이터 가져와서 map으로 각 아이템 반복해서 렌더링
     return (
         <Wrapper>
             {keyword === '아기사자' ? (

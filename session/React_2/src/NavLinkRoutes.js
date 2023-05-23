@@ -6,6 +6,7 @@ import NavLinkMyPage from './pages/navlink/NavLinkMyPage';
 const NavLinkRoutes = () => {
     return (
         <>
+            {/* Routes 바깥의 요소는 모든 path에서 공통적으로 렌더링됨, 네비게이션 바 */}
             <NavContainer>
                 <Link className='back' to='/'>
                     Google 메인으로
@@ -27,7 +28,9 @@ const NavLinkRoutes = () => {
                 </div>
             </NavContainer>
             <Routes>
+                {/* HOME, 중첩 라우팅이므로 실제 경로는 '/navlink/home' */}
                 <Route path='/home' element={<NavLinkHomePage />} />
+                {/* MY, 중첩 라우팅이므로 실제 경로는 '/navlink/mypage' */}
                 <Route path='/mypage' element={<NavLinkMyPage />} />
             </Routes>
         </>
@@ -37,6 +40,10 @@ const NavLinkRoutes = () => {
 export default NavLinkRoutes;
 
 const NavContainer = styled.nav`
+    /* 활성화된 NavLink에 스타일 부여 */
+    .active {
+        background-color: lightblue;
+    }
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -68,8 +75,5 @@ const NavContainer = styled.nav`
         :hover {
             color: steelblue;
         }
-    }
-    .active {
-        background-color: lightblue;
     }
 `;
