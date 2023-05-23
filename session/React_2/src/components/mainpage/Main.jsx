@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { GrSearch } from 'react-icons/gr';
-import { MdKeyboard, MdMic } from 'react-icons/md';
-import { SiGooglelens } from 'react-icons/si';
+import search from '../../assets/search.svg';
+import keyboard from '../../assets/keyboard.svg';
+import mic from '../../assets/mic.svg';
+import lens from '../../assets/lens.svg';
 
 const Main = () => {
     const navigate = useNavigate();
@@ -13,20 +14,34 @@ const Main = () => {
         setInputValue(e.target.value);
     };
     const moveToResult = () => navigate(`/search?keyword=${inputValue}`);
+
+    const [isFocus, setIsFocus] = useState(false);
+    const searchInput = useRef(null);
+    const clickInput = event => {
+        if (document.activeElement === searchInput.current) setIsFocus(true);
+        else setIsFocus(false);
+    };
+    useEffect(() => {
+        document.addEventListener('click', clickInput);
+    }, []);
     return (
         <Wrapper>
             <LogoImg
                 src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2880px-Google_2015_logo.svg.png'
                 alt='google logo'
             />
-            <SearchContainer>
-                <GrSearch size='20' color='#606367' />
+            <SearchContainer className={isFocus ? 'isFocus' : null}>
+                <img src={search} className='search' />
                 <form onSubmit={moveToResult}>
-                    <SearchInput value={inputValue} onChange={handleInput} />
+                    <SearchInput
+                        value={inputValue}
+                        onChange={handleInput}
+                        ref={searchInput}
+                    />
                 </form>
-                <MdKeyboard size='25' color='#606367' />
-                <MdMic size='25' color='#606367' />
-                <SiGooglelens size='20' color='#606367' />
+                <img src={keyboard} className='keyboard' />
+                <img src={mic} className='mic' />
+                <img src={lens} className='lens' />
             </SearchContainer>
             <BtnContainer>
                 <Btn>Google 검색</Btn>
@@ -43,6 +58,10 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 8%;
+    .isFocus {
+        border: 1px solid white;
+        box-shadow: 1px 2px 7px rgba(150, 150, 150, 0.4);
+    }
 `;
 const LogoImg = styled.img`
     width: 25%;
@@ -51,17 +70,36 @@ const SearchContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 60%;
     height: 50px;
     border: 1px solid lightgray;
     border-radius: 25px;
     margin: 30px 0;
-    svg {
-        padding: 0 15px;
+    img {
         cursor: pointer;
+    }
+    .search {
+        width: 4%;
+        margin-left: 4%;
+        margin-right: 10px;
+    }
+    .keyboard {
+        width: 5%;
+    }
+    .mic {
+        width: 3%;
+        margin: 0 4%;
+    }
+    .lens {
+        width: 4%;
+        margin-right: 5%;
     }
     form {
         width: 70%;
+    }
+    :hover {
+        border: 1px solid white;
+        box-shadow: 1px 2px 7px rgba(150, 150, 150, 0.4);
     }
 `;
 const SearchInput = styled.input`

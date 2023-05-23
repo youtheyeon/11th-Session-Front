@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { GoKebabVertical } from 'react-icons/go';
+import more from '../../assets/more.svg';
 
 const SearchItem = props => {
     const { item } = props;
@@ -11,7 +11,7 @@ const SearchItem = props => {
         <Container>
             <LinkSection onClick={moveToDetail}>
                 <div className='circle'>
-                    <img src={item.url.logo} alt='website lofo' />
+                    <img src={item.url.logo} alt='website logo' />
                 </div>
                 <div>
                     <div className='website'>{item.url.website}</div>
@@ -19,7 +19,7 @@ const SearchItem = props => {
                         <span className='url'>
                             {item.url.url + ' > ' + item.url.keyword}
                         </span>
-                        <GoKebabVertical size='15' color='#606367' />
+                        <img src={more} className='more' />
                     </div>
                 </div>
             </LinkSection>
@@ -63,7 +63,8 @@ const LinkSection = styled.div`
     .flex {
         display: flex;
         align-items: center;
-        svg {
+        .more {
+            width: 2.5px;
             margin-left: 10px;
         }
     }

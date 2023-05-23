@@ -1,28 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
-import { MdSettings, MdClose, MdKeyboard, MdMic } from 'react-icons/md';
-import { TbGridDots } from 'react-icons/tb';
-import { BsPersonCircle } from 'react-icons/bs';
-import { GrSearch } from 'react-icons/gr';
-import { SiGooglelens } from 'react-icons/si';
+import close from '../../assets/close.svg';
+import search from '../../assets/search.svg';
+import keyboard from '../../assets/keyboard.svg';
+import mic from '../../assets/mic.svg';
+import lens from '../../assets/lens.svg';
+import setting from '../../assets/setting.svg';
+import menu from '../../assets/menu.svg';
 
 const SearchHeader = () => {
     const navigate = useNavigate();
+
+    // (1) useLocation과 URLSearchParams 사용하여 쿼리 스트링 추출하기
     // const location = useLocation();
     // const queryParams = new URLSearchParams(location.search);
     // const keyword = queryParams.get('keyword');
+
+    // (2) useSearchParams 사용하여 쿼리 스트링 추출하기
     const [searchParams, setSearchParams] = useSearchParams();
     const keyword = searchParams.get('keyword');
 
+    // 검색창 input 상태 관리 로직
     const [inputValue, setInputValue] = useState('');
     const handleInput = e => {
         e.preventDefault();
         setInputValue(e.target.value);
     };
-    useEffect(() => {
-        setInputValue(keyword);
-    }, [keyword]);
+    // input창이 비어있다면
     useEffect(() => {
         if (!inputValue) setInputValue(keyword);
     }, []);
@@ -30,6 +35,16 @@ const SearchHeader = () => {
         e.preventDefault();
         navigate(`/search?keyword=${inputValue}`);
     };
+
+    const [isFocus, setIsFocus] = useState(false);
+    const searchInput = useRef(null);
+    const clickInput = event => {
+        if (document.activeElement === searchInput.current) setIsFocus(true);
+        else setIsFocus(false);
+    };
+    useEffect(() => {
+        document.addEventListener('click', clickInput);
+    }, []);
     return (
         <Wrapper>
             <Logo
@@ -37,24 +52,26 @@ const SearchHeader = () => {
                 onClick={() => navigate('/')}
                 alt='google logo'
             />
-            <SearchContainer onSubmit={moveToResult}>
-                <SearchInput value={inputValue || ''} onChange={handleInput} />
-                <MdClose size='25' color='#606367' />
-                <div className='border' />
-                <MdKeyboard size='26' color='#606367' />
-                <MdMic size='25' color='#606367' />
-                <SiGooglelens size='20' color='#606367' />
-                <GrSearch
-                    size='25'
-                    color='#3870e0'
-                    className='last'
-                    type='submit'
+            <SearchContainer
+                onSubmit={moveToResult}
+                className={isFocus ? 'isFocus' : null}
+            >
+                <SearchInput
+                    value={inputValue || ''}
+                    onChange={handleInput}
+                    ref={searchInput}
                 />
+                <img src={close} className='close' />
+                <div className='border' />
+                <img src={keyboard} className='keyboard' />
+                <img src={mic} className='mic' />
+                <img src={lens} className='lens' />
+                <img src={search} className='search' type='submit' />
             </SearchContainer>
             <div className='inner'>
-                <MdSettings size='28' color='#606367' />
-                <TbGridDots size='30' color='#606367' />
-                <BsPersonCircle size='30' color='#a8a9aa' />
+                <img src={setting} className='setting' />
+                <img src={menu} className='menu' />
+                <div className='circle'></div>
             </div>
         </Wrapper>
     );
@@ -75,10 +92,25 @@ const Wrapper = styled.div`
         align-items: center;
         width: 20%;
         padding-right: 2%;
-        svg {
-            padding: 3%;
+        img {
             cursor: pointer;
         }
+        .setting {
+            width: 25px;
+        }
+        .menu {
+            width: 18px;
+            padding: 0 20px;
+        }
+        .circle {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #d9d9d9;
+        }
+    }
+    .isFocus {
+        box-shadow: 1px 2px 8px rgba(150, 150, 150, 0.6);
     }
 `;
 const Logo = styled.img`
@@ -96,20 +128,38 @@ const SearchContainer = styled.form`
     border: 0;
     outline: 0;
     box-shadow: 1px 2px 7px rgba(150, 150, 150, 0.4);
+    :hover {
+        box-shadow: 1px 2px 8px rgba(150, 150, 150, 0.6);
+    }
+    .close {
+        width: 2.7%;
+    }
     .border {
         width: 0px;
         height: 30px;
         border-left: 1px solid lightgray;
+        margin: 0 10px;
     }
-    .last {
-        padding-right: 3%;
+    .keyboard {
+        width: 4.5%;
     }
-    svg {
+    .mic {
+        width: 2.8%;
+    }
+    .lens {
+        width: 3.7%;
+    }
+    .search {
+        width: 3%;
+        padding-right: 4%;
+    }
+    img {
         cursor: pointer;
+        padding: 0 1%;
     }
 `;
 const SearchInput = styled.input`
-    width: 63%;
+    width: 60%;
     height: 33px;
     border: 0;
     outline: 0;

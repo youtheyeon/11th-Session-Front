@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TbGridDots } from 'react-icons/tb';
+import menu from '../../assets/menu.svg';
 
 const Header = () => {
     return (
@@ -11,7 +11,7 @@ const Header = () => {
             <Section>
                 <Text>Gmail</Text>
                 <Text>이미지</Text>
-                <TbGridDots size='25' color='#606367' />
+                <img src={menu} />
                 <LoginBtn>로그인</LoginBtn>
             </Section>
         </Wrapper>
@@ -28,12 +28,14 @@ const Section = styled.div`
     display: flex;
     align-items: center;
     padding: 10px 30px;
-    svg {
+    img {
+        width: 6%;
         margin: 0 10px;
     }
 `;
 const Text = styled.p`
     padding: 0 15px;
+    flex-shrink: 0;
     cursor: pointer;
 `;
 const LoginBtn = styled.div`
