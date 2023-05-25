@@ -65,6 +65,7 @@ const Wrapper = styled.div`
     align-items: center;
     padding: 8%;
     .isFocus {
+        //.input은 하나 상위에 쓰기
         border: 1px solid white;
         box-shadow: 1px 2px 7px rgba(150, 150, 150, 0.4);
     }

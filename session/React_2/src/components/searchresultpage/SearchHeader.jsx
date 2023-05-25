@@ -30,7 +30,7 @@ const SearchHeader = () => {
     };
     // input창이 비어있다면
     useEffect(() => {
-        if (!inputValue) setInputValue(keyword);
+        if (!inputValue) setInputValue(keyword); //문자열이 비어 있으면 false로 취급
     }, []);
     const moveToResult = e => {
         e.preventDefault();
