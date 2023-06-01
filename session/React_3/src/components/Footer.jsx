@@ -1,7 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React, {useContext} from 'react';
+import styled from 'styled-components';
+import {ThemeContext} from '../contexts/ThemeContext';
 
-const Footer = ({ isDark, setIsDark }) => {
+const Footer = () => {
+  const {isDark, setIsDark} = useContext(ThemeContext);
   const toggleTheme = () => {
     setIsDark(!isDark);
   };
@@ -16,7 +18,7 @@ const Footer = ({ isDark, setIsDark }) => {
 export default Footer;
 
 const FooterWrapper = styled.div`
-  background-color: ${(props) => (props.isDark ? "black" : "lightgray")};
+  background-color: ${(props) => (props.isDark ? 'black' : 'lightgray')};
 
   width: 100%;
   height: 65px;
