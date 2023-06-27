@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { useDispatch } from "react-redux";
-// 문제 (1)
-import { useNavigate } from "react-router-dom";
+import React, {useState} from 'react';
+import styled from 'styled-components';
+import {useDispatch} from 'react-redux';
+import {setUser} from '../redux/userSlice';
+import {useNavigate} from 'react-router-dom';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -13,8 +13,13 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   // 정보 저장 함수
   const submintAccounts = () => {
-    // 문제 (2)
-    navigate("/mypage");
+    dispatch(
+      setUser({
+        userID: ID,
+        userName: name,
+      })
+    );
+    navigate('/mypage');
   };
 
   return (
@@ -23,11 +28,11 @@ const LoginPage = () => {
         <h1>로그인</h1>
         <InputWrapper>
           <input
-            placeHolder="아이디"
+            placeHolder='아이디'
             onChange={(e) => setID(e.target.value)}
           ></input>
           <input
-            placeHolder="닉네임"
+            placeHolder='닉네임'
             onChange={(e) => setName(e.target.value)}
           ></input>
           <button onClick={submintAccounts}>로그인</button>
