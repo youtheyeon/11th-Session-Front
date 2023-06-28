@@ -29,7 +29,7 @@ const CategoryPage = () => {
   //--------------------------------------------------
   // 문제 1) 30분 후 만료되는 모달 쿠키를 만들고, modal 닫는 closeModal 함수
   const closeModal = () => {
-    document.cookie = 'modalCookie="valid"; max-age=20';
+    document.cookie = 'modalCookie="valid"; max-age=1800';
     setModal(false);
   };
   // 문제 2) filterSlice의 filter 받아오기, dispatch 사용 선언
