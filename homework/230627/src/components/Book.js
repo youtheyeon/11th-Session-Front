@@ -47,10 +47,9 @@ const Book = (props) => {
       navigate('/login');
     }
   };
-
   /* Book 컴포넌트는 categoryPage, MyPage 두 곳에서 사용하므로, 
-      isMyList를 받아서 myPage에서 사용하는 경우 likedList에 저장된 책만 보여줌*/
-
+    isMyList를 받아서 MyPage에서 사용하는 경우 likedList에 저장된 책만 보여줌
+    categoryPage, MyPage 각 페이지에 맞는 Book 컴포넌트인지 확인하여 t/f 리턴 */
   const checkValid = (id) => {
     var isValid = true;
     isMyList && likedList.indexOf(String(id)) === -1 && (isValid = false);
